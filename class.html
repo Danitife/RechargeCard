@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="dan"></h1>
+    <input type="text">
+</body>
+</html>
+
+<script>
+    let text = "    Couple of characters"
+    let str = "Dan"
+    console.log(text.split(" ").join("-"));
+    console.log(str.padStart(6, "iel"));
+    console.log(str.padEnd(6, "ing"));
+    console.log(text);
+    // document.getElementById("dan").innerHTML = text
+    console.log(text.length);
+    console.log(text.indexOf('C'));
+    console.log(text.includes(" char"));
+    console.log(text.startsWith("C"));
+
+    console.log(text.trim(""));
+    let yyy = text.padStart(34,"This ");
+
+    console.log(yyy);
+    document.getElementById("dan").innerHTML = yyy
+    console.log(text.padEnd(30, "end"));
+
+    let another = "Javascript"
+    console.log(another);
+    console.log(another.substring(5, 7));
+    console.log(another.slice(5, 7));
+    console.log(another.substr(2, 4));
+    console.log(another.concat(text));
+    console.log(another+text);
+
+    let country = "Burkinafaso"
+
+    console.log(country.replace("f", "Z"));
+    console.log(country.replaceAll("a", "W"));
+
+    document.getElementById("dan").innerHTML = "I am not from " + country + " I am "+  "<i>"+ "from"+ "</i>"  +" the US"
+    // document.getElementById("dan").innerHTML = `I am not from ${country} I am <i>from</i> the UK`
+
+</script>

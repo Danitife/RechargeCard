@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <label for="">Network Provider</label>
+        <select name="" id="network">
+            <option value="MTN">MTN</option>
+            <option value="GLO">GLO</option>
+            <option value="AIRTEL">AIRTEL</option>
+            <option value="9Mobile">9Mobile</option>
+        </select>
+        <label for="">Amount</label>
+        <select name="" id="amount">
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <option value="500">500</option>
+            <option value="1000">1000</option>
+        </select>
+
+        <button onclick="genPin()">Generate Pin</button>
+        <h1 id="dispPin"></h1>
+
+        <h1>Load Airtime</h1>
+        <input type="text" id="loadMTN">
+        <button onclick="loadMtnCard()">loadMTN</button>
+        <h1 id="dev"></h1>
+    </main>
+</body>
+</html>
+
+<script>
+    let amount = document.getElementById("amount");
+    let network = document.getElementById("network");
+    let loadMTN = document.getElementById("loadMTN");
+
+    function genPin(){
+        let pin = Math.floor(Math.random()* 100000);
+        dispPin.innerHTML = pin
+        alert(`You have generated ${network.value} of ${amount.value}`)
+    }
+
+    function loadMtnCard(){
+        let pin = document.getElementById("dispPin").innerHTML
+        if(!loadMTN.value.startsWith("*555") || !loadMTN.value.endsWith("#") || !loadMTN.value.includes(pin)){
+            alert("Invalid Code")
+        }else if(network.value !== "MTN"){
+            alert("Invalid network provider")
+        }else{
+            alert(`You have recharged ${network.value} of ${amount.value}`)
+        }
+    }
+
+    let names = ["Dan", 'Sam', 'Vic']
+    console.log(names[1]);
+
+    let text = "I am a Developer"
+    console.log(text[7]);
+    let index = 0
+    dev.innerHTML = text[index];
+
+
+    let typing = setInterval(()=>{
+        if(index == text.length-1){
+            clearInterval(typing)
+        }else{
+            index++;
+            dev.innerHTML += text[index]
+        }
+    }, 1000)
+</script> 
